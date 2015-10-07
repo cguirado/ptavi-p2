@@ -20,3 +20,4 @@ if __name__ == "__main__":
                 for operaciones in linea[2:]:
                     calcular = diccionario[operador](calcular, operaciones)
                 print(calcular)
+
