@@ -13,7 +13,10 @@ if __name__ == "__main__":
     for linea in (lineas):
         palabra = linea.split(",")
         operador = palabra[0]
-        diccionario = {"suma": calcu.suma, "multiplica": calcu.multiplica, "resta": calcu.resta, "divide": calcu.divide}
+        diccionario = {"suma": calcu.suma,
+                       "multiplica": calcu.multiplica,
+                       "resta": calcu.resta,
+                       "divide": calcu.divide}
 
         if operador in ["suma", "multiplica", "resta", "divide"]:
             calcular = palabra[1]
