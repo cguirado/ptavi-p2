@@ -5,28 +5,18 @@ import sys
 import calcoohija
 
 if __name__ == "__main__":
-    leer = open(sys.argv[1],"r")
-    lineas = leer.readlines()
 
-    for linea in lineas:
-        #print(linea[:-1])
-        palabra = linea.split(",")[:-1]
-        #print (palabra) 
-        operador=palabra[0]
-        calc= calcoohija.CalculadoraHija()
-        print(operador)
-        if operador == "suma":
-            while op <= palabra[-1] :
-                op=palabra[1]
-                op1=palabra[2]
-                 sum1=op+op1
-                for sum1 in palabra[:-1]
-                resultado=calc.suma(op,op1)
-        if operador == "resta":
-           resultado=calcu.resta(palabra[2:-1])
-        else:
-            sys.exit("MAL")
-           
-        print(resultado)
-     
-        
+    leer = open(sys.argv[1], "r")
+    lineas = leer.readlines()
+    calcu = calcoohija.CalculadoraHija()
+
+    for linea in (lineas):
+        palabra = linea.split(",")
+        operador = palabra[0]
+        diccionario = {"suma": calcu.suma, "multiplica": calcu.multiplica, "resta": calcu.resta, "divide": calcu.divide}
+
+        if operador in ["suma", "multiplica", "resta", "divide"]:
+            calcular = palabra[1]
+            for operaciones in palabra[2:]:
+                calcular = diccionario[operador](calcular, operaciones)
+            print(calcular)
