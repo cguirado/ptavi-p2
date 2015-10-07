@@ -13,11 +13,13 @@ if __name__ == "__main__":
         lineas = csv.reader(csvarchivo)
         for linea in lineas:
             operador = linea[0]
-            diccionario = {"suma": calcu.suma, "multiplica": calcu.multiplica, "resta": calcu.resta, "divide": calcu.divide} 
+            diccionario = {"suma": calcu.suma,
+                           "multiplica": calcu.multiplica,
+                           "resta": calcu.resta,
+                           "divide": calcu.divide}
 
             if operador in ["suma", "multiplica", "resta", "divide"]:
                 calcular = linea[1]
                 for operaciones in linea[2:]:
                     calcular = diccionario[operador](calcular, operaciones)
                 print(calcular)
-
